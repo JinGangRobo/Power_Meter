@@ -1,0 +1,18 @@
+# ===================== Keil MDK 编译输出 =====================
+# 目标输出目录。hex 例外保留，方便不编译直接烧录
+MDK-ARM/TEST_power_meter_3/*
+!MDK-ARM/TEST_power_meter_3/TEST_power_meter_3.hex
+
+# Keil 每个用户自己的窗口布局
+MDK-ARM/*.uvguix.*
+# 编译中间产物与日志
+MDK-ARM/*.bak
+MDK-ARM/*.dep
+MDK-ARM/*.scvd
+MDK-ARM/JLinkLog.txt
+MDK-ARM/*.build_log.htm
+
+# ===================== 通用 =====================
+*.tmp
+Thumbs.db
+desktop.ini
