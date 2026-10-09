@@ -1,4 +1,4 @@
-#ifndef KK_OLED_INTERNAL_H
+﻿#ifndef KK_OLED_INTERNAL_H
 #define KK_OLED_INTERNAL_H
 
 #include "kk_oled.h"

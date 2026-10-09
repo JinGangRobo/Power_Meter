@@ -1,4 +1,4 @@
-/* kk_pm_splash.h —— 开机图片
+﻿/* kk_pm_splash.h —— 开机图片
  *
  * 来源：工程根目录的 jgrobo.svg（只取其中的标志图形，去掉了 JGROBO 字样）。
  * 转换方式：无头 Chrome 按 SVG 实际图形边界（5.24,0 74.19x56.16）等比渲染成

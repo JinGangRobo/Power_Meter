@@ -1,4 +1,4 @@
-/* kk_oled_driver.c —— KK_OLED 在本工程的硬件适配层
+﻿/* kk_oled_driver.c —— KK_OLED 在本工程的硬件适配层
  *
  * 本文件是 KK_OLED 的固定硬件适配边界，本工程与显示相关的硬件事实集中在这里：
  *

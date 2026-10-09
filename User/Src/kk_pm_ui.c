@@ -1,4 +1,4 @@
-/* kk_pm_ui.c —— 用 KK_UI 搭的功率计界面
+﻿/* kk_pm_ui.c —— 用 KK_UI 搭的功率计界面
  *
  * 页面结构（根页面是首页图标选择器）：
  *   HOME（4 个 32x32 图标）
@@ -173,9 +173,10 @@ void KK_UI_CustomOnLeave(KK_UI_PageId page)
   (void)page;
 }
 
-/* 自定义页的确定键：
-     实时数据页(只读) -> 返回上级，也是没接 KEY2 时的退路
-     PWM 页           -> 切换 PWM 输出 */
+/* 自定义页的按键：
+     短按 -> 返回上级。本板只装了一个键(PA6)，没有 KEY2，
+             自定义页必须留这条出口，否则进去就出不来
+     长按 -> PWM 页切换输出；实时数据页(只读)也当成返回 */
 void KK_UI_CustomOnInput(KK_UI_PageId page, KK_UI_InputEvent event)
 {
   if (event.action == KK_UI_INPUT_OK)
@@ -188,6 +189,10 @@ void KK_UI_CustomOnInput(KK_UI_PageId page, KK_UI_InputEvent event)
     {
       (void)KK_UI_CustomRequestClose();
     }
+  }
+  else if (event.action == KK_UI_INPUT_DOWN)
+  {
+    (void)KK_UI_CustomRequestClose();
   }
 }
 
@@ -239,13 +244,14 @@ static void ui_line(int16_t x_offset, int16_t y, const char *s)
   (void)OLED_DrawUTF8((int16_t)(x_offset + PM_TEXT_X), y, s);
 }
 
-/* 拼出 "X=当前值 M=最大值" 这样一行: 当前值 3 位小数, 锁存最大值 2 位小数 */
+/* 拼出 "X=当前值 M=最大值" 这样一行: 两个值都用 2 位小数。
+   量程放开到 204.8V / 163.84A 后, 三位整数位的读数会顶满一行, 所以不用 3 位小数 */
 static void ui_fmt_cur_max(char *dst, const char *label, float cur, float max)
 {
   char sb[16];
 
   strcpy(dst, label);
-  App_FmtFloat(sb, cur, 3);
+  App_FmtFloat(sb, cur, 2);
   strcat(dst, sb);
   strcat(dst, " M=");
   App_FmtFloat(sb, max, 2);
@@ -281,7 +287,7 @@ void KK_UI_CustomOnDraw(KK_UI_PageId page, int16_t x_offset,
 
   /* 第 3 行: 功率 —— 本机最核心的读数, 用反白圆角块突出 */
   strcpy(tmp, "P=");
-  App_FmtFloat(sb, INA228_GetPower_W(), 3);
+  App_FmtFloat(sb, INA228_GetPower_W(), 2);
   strcat(tmp, sb);
   strcat(tmp, "W");
   OLED_DrawRBox((int16_t)(x_offset + PM_PWR_BOX_X),
@@ -299,7 +305,7 @@ void KK_UI_CustomOnDraw(KK_UI_PageId page, int16_t x_offset,
   else
   {
     strcpy(tmp, "PK=");
-    App_FmtFloat(sb, App_GetPeakPower_W(), 3);
+    App_FmtFloat(sb, App_GetPeakPower_W(), 2);
     strcat(tmp, sb);
     strcat(tmp, "W");
     ui_line(x_offset, PM_METER_PK_Y, tmp);

@@ -1,4 +1,4 @@
-/* kk_pm_font.h —— 本工程用到的 KK_OLED 字模
+﻿/* kk_pm_font.h —— 本工程用到的 KK_OLED 字模
  *
  * 字模由 LEDFont Agent API v1 按需生成，只包含界面实际会显示的字符，
  * 编译期不依赖在线服务。

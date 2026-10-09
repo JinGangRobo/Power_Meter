@@ -1,4 +1,4 @@
-/* kk_pm_icons.h —— KK_UI 首页选择器用的 32x32 XBM 图标
+﻿/* kk_pm_icons.h —— KK_UI 首页选择器用的 32x32 XBM 图标
  *
  * [0] 波形  —— 监测入口（KK_UI 标准 Demo 图标, MIT）
  * [1] 齿轮  —— 控制入口（本工程离线生成）
