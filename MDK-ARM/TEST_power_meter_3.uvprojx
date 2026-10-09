@@ -10,13 +10,13 @@
       <TargetName>TEST_power_meter_3</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6140001::V6.14.1::ARMCLANG</pCCUsed>
+      <pCCUsed>6230000::V6.23::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32C011F6Px</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32C0xx_DFP.2.4.0</PackID>
+          <PackID>Keil.STM32C0xx_DFP.2.3.0</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x200017FF) IROM(0x8000000-0x8007FFF)  CLOCK(8000000) CPUTYPE("Cortex-M0+") TZ</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -186,6 +186,7 @@
             <RvdsVP>0</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -336,7 +337,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-Os</MiscControls>
+              <MiscControls>-Oz</MiscControls>
               <Define>USE_HAL_DRIVER,STM32C011xx,KK_UI_REFRESH_MODE=0,KK_UI_NAV_DEPTH=4,KK_UI_EVENT_QUEUE_LENGTH=4,KK_UI_ENABLE_HOME=1,KK_UI_ENABLE_INFO=1,KK_UI_ENABLE_CUSTOM=1,KK_UI_ENABLE_INT_EDITOR=0,KK_UI_ENABLE_BOOL_EDITOR=0,KK_UI_ENABLE_CONFIRM=0,KK_UI_ENABLE_MESSAGE=0,KK_UI_ENABLE_TOAST=0,KK_UI_ENABLE_DRAW_HELPERS=1</Define>
               <Undefine></Undefine>
               <IncludePath>../Core/Inc;../Drivers/STM32C0xx_HAL_Driver/Inc;../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32C0xx/Include;../Drivers/CMSIS/Include;../User/Inc;../User/ThirdParty/KK_OLED/include;../User/ThirdParty/KK_OLED/graphics;../User/ThirdParty/KK_OLED/driver;../User/ThirdParty/KK_UI/include;../User/ThirdParty/KK_UI/src</IncludePath>
@@ -801,8 +802,8 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="6.1.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="6.1.0"/>
         <targetInfos>
           <targetInfo name="TEST_power_meter_3"/>
         </targetInfos>

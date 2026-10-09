@@ -1,4 +1,4 @@
-/* kk_pm_font.c —— 工程字模数据，由 LEDFont Agent API v1 生成，请勿手工修改。
+﻿/* kk_pm_font.c —— 工程字模数据，由 LEDFont Agent API v1 生成，请勿手工修改。
  * 生成参数与许可说明见 User/Inc/kk_pm_font.h。
  */
 #include "kk_pm_font.h"

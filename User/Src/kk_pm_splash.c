@@ -1,4 +1,4 @@
-/* kk_pm_splash.c —— 开机图片数据，由 jgrobo.svg 离线转换，请勿手工修改。
+﻿/* kk_pm_splash.c —— 开机图片数据，由 jgrobo.svg 离线转换，请勿手工修改。
  * 图形边界、尺寸与打包方式见 User/Inc/kk_pm_splash.h。
  */
 #include "kk_pm_splash.h"
